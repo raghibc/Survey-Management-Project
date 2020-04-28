@@ -1,0 +1,107 @@
+.instructions, .confirm-msg {
+    text-align: center;
+    font-style: italic;
+}
+
+.first-row, .second-row, .third-row {
+    margin: auto;
+    width: 50%;
+}
+
+.first-name, .last-name {
+    display: inline-block;
+}
+
+.first-name {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.first-name-full-width {
+    width: 100%;
+}
+
+.last-name {
+    width: 47.5%;
+}
+
+.last-name-full-width {
+    width: 100%;
+}
+
+.dob, .title {
+    display: inline-block;
+}
+
+.dob {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.dob-full-width {
+    width: 100%;
+}
+  
+.title {
+    width: 47.5%;
+}
+
+.title-full-width {
+    width: 100%;
+}
+
+.pos {
+    width: 45%;
+    margin: auto;
+}
+
+.pos-full-width {
+    width: 100%;
+}
+
+.custom-section {
+    width: 60%;
+    margin-bottom: 3%;
+}
+
+.custom-q-full-width {
+    width: 100%;
+}
+
+.custom-a-full-width {
+    width: 100%;
+}
+
+.btn-row button {
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: rgb(219, 81, 81);
+    border-color: whitesmoke;
+}
+
+.btn-primary:hover {
+    background-color: maroon;
+}
+
+.btn-row {
+    margin-bottom: 1%;
+}
+
+.first-row, .second-row, .third-row {
+    margin-bottom: 1%;
+}
+
+.third-row {
+    margin-bottom: 2%;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+.custom-section {
+    margin: 1.5% auto 1.5% auto;
+}

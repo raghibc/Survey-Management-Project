@@ -1,0 +1,15 @@
+.search-prompt {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.btn-primary {
+    background-color: rgb(219, 81, 81);
+    border-color: whitesmoke;
+}
+
+.btn-primary:hover {
+    background-color: maroon;
+}
+
