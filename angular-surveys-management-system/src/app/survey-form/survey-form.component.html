@@ -1,0 +1,64 @@
+<app-surveys-buttons></app-surveys-buttons>
+
+<form [formGroup]="registrationForm" *ngIf="!submittedSurvey; else elseBlock" (ngSubmit)="surveySubmit()">
+    <p class="instructions">Create a title and add additional questions to your custom survey</p>
+        
+        <div class="first-row">
+                
+
+            <div class="title">
+                <mat-form-field class="title-full-width" appearance="outline">
+                    <mat-label>Title for Survey</mat-label>
+                    <input matInput [class.is-invalid]="title.invalid && 
+                    title.touched" formControlName="title" placeholder="Ex: My Survey" required>
+
+                    <mat-error *ngIf="title.invalid && title.touched">
+                        <mat-error *ngIf="title.errors?.required" class="text-danger">Title is required</mat-error>
+                        <mat-error *ngIf="title.errors?.minlength" class="text-danger">Title must have at least two characters</mat-error>
+                    </mat-error>
+
+                </mat-form-field>
+
+            </div>
+
+        </div>
+
+        <div class="second-row"> 
+            <button mat-icon-button type="button" (click)="addQuestion()" style="background-color: rgba(36, 184, 97, 0.89); 
+            color: white;" matTooltip="Add a question"><span class="material-icons"> add </span></button>
+        </div>
+
+            
+        <div formArrayName="questions">
+
+            <div class="custom-section" *ngFor="let q of questions.controls; let i = index">
+                
+                <button mat-icon-button type="button" (click)="removeQuestion(i)" class="remove-btn" matTooltip="Delete the question">
+                    <span class="material-icons"> delete_forever </span></button>
+               
+                <mat-form-field class="custom-q-full-width" appearance="outline">
+                    <mat-label>Question</mat-label>
+                    <input matInput [class.is-invalid]="questions.invalid && questions.touched" [formControlName]="i" required>
+
+                    <mat-error *ngIf="questions.invalid && questions.touched">
+                        <mat-error class="text-danger">Question cannot be empty</mat-error>
+                    </mat-error>
+
+                </mat-form-field> 
+                
+            </div>
+
+        </div>
+
+        <div class="submit-row">
+            <button mat-flat-button [disabled]="!registrationForm.valid" type="submit" color="warn">Submit</button>
+        </div>
+
+</form>
+
+<ng-template #elseBlock>
+    <p class="confirm-msg">Thank you. The custom survey has been created.</p> 
+</ng-template>
+
+
+{{ registrationForm.value | json }}

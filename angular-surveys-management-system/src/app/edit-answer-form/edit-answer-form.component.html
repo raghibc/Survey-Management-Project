@@ -1,0 +1,65 @@
+<app-answers-buttons></app-answers-buttons>
+
+<form [formGroup]="registrationForm" (ngSubmit)="updateAnswers()">
+    <p class="instructions">Edit your answers to the questions where you see fit</p>
+        
+        <div class="first-row">
+                
+            <div class="name">
+
+                <mat-form-field class="name-full-width" appearance="outline">
+                    <mat-label>Name</mat-label>
+
+                    <input matInput formControlName="name" readonly="readonly" required>
+
+                    <mat-error *ngIf="name.hasError('required')">Name is required</mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <div class="title">
+
+                <mat-form-field class="title-full-width" appearance="outline">
+                    <mat-label>Survey</mat-label>
+
+                    <input matInput formControlName="title" readonly="readonly" required>
+
+                    <mat-error *ngIf="title.hasError('required')">Title is required</mat-error>
+                </mat-form-field>
+
+            </div>
+
+        </div>
+
+        <div class="custom-section" *ngFor="let q of questions; let i = index;">
+
+            <mat-form-field class="custom-q-full-width" appearance="outline">
+                <mat-label>Question</mat-label>
+                <input matInput value="{{q}}" readonly="readonly">
+            </mat-form-field>
+
+            
+            <div formArrayName="answers">
+                    
+                <mat-form-field class="custom-a-full-width" appearance="outline">
+                    <mat-label>Answer</mat-label>
+                    <input matInput [class.is-invalid]="answers.invalid && answers.touched" [formControlName]="i" required>
+
+                    <mat-error *ngIf="answers.invalid && answers.touched">
+                        <mat-error class="text-danger">Answer cannot be empty</mat-error>
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+
+        </div> 
+
+        <div class="btn-row">
+            <button mat-flat-button [disabled]="!registrationForm.valid" type="submit" color="warn">Submit</button>
+        </div>
+
+</form>
+
+
+{{ registrationForm.value | json }}

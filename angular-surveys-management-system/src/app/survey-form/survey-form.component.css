@@ -1,0 +1,61 @@
+.instructions, .confirm-msg {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.first-row, .second-row, .submit-row {
+    display: flex;
+    justify-content: center;
+}
+  
+.title {
+    width: 40%;
+}
+
+.title-full-width {
+    width: 100%;
+}
+
+.custom-section {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-q-full-width {
+    width: 80%;
+}
+
+.second-row {
+    margin-bottom: 1%;
+}
+
+button {
+    margin-right: 1%;
+}
+
+.custom-section {
+    margin: 1% auto auto auto;
+}
+
+.remove-btn {
+    background-color: rgba(165, 84, 84, 0.89); 
+    color: white; 
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+
+ .material-icons {
+    height:18px  ;
+    width:18px ;
+    font-size:18px;
+}
+
+.mat-icon-button {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}

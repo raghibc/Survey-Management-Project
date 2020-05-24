@@ -11,11 +11,17 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { EditAnswerFormComponent } from './edit-answer-form/edit-answer-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     routingComponents,
+    EditAnswerFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +31,9 @@ import { MaterialModule } from './material/material.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

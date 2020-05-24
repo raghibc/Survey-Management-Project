@@ -1,0 +1,38 @@
+.instructions, .confirm-msg {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.first-row, .second-row, .submit-row {
+    display: flex;
+    justify-content: center;
+}
+  
+.title {
+    width: 40%;
+}
+
+.title-full-width {
+    width: 100%;
+}
+
+.custom-section {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-q-full-width {
+    width: 80%;
+}
+
+.second-row {
+    margin-bottom: 1%;
+}
+
+.custom-section {
+    margin: 1% auto auto auto;
+}
+ 

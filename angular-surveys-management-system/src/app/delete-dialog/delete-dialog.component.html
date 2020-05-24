@@ -1,0 +1,9 @@
+<mat-dialog-content>
+
+    <p>{{warning_msg}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+	<button mat-raised-button color="primary" (click)="deleteConfirm()" tabindex="1">{{confirm_txt}}</button>
+	<button mat-raised-button mat-dialog-close tabindex="-1">{{cancel_txt}}</button>
+</mat-dialog-actions>

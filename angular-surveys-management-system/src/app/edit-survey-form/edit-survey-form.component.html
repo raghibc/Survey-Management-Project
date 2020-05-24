@@ -1,0 +1,49 @@
+<app-surveys-buttons></app-surveys-buttons>
+
+<form [formGroup]="registrationForm" (ngSubmit)="updateSurvey()">
+    <p class="instructions">Edit the title and questions where necessary</p>
+        
+        <div class="first-row">            
+
+            <div class="title">
+                <mat-form-field class="title-full-width" appearance="outline">
+                    <mat-label>Title for Survey</mat-label>
+                    <input matInput [class.is-invalid]="title.invalid && 
+                    title.touched" formControlName="title" placeholder="Ex: My Survey" required>
+
+                    <mat-error *ngIf="title.invalid && title.touched">
+                        <mat-error *ngIf="title.errors?.required" class="text-danger">Title is required</mat-error>
+                        <mat-error *ngIf="title.errors?.minlength" class="text-danger">Title must have at least two characters</mat-error>
+                    </mat-error>
+
+                </mat-form-field>
+
+            </div>
+
+        </div>
+            
+        <div formArrayName="questions">
+
+            <div class="custom-section" *ngFor="let q of questions.controls; let i = index">
+               
+                <mat-form-field class="custom-q-full-width" appearance="outline">
+                    <mat-label>Question</mat-label>
+                    <input matInput [class.is-invalid]="questions.invalid && questions.touched" [formControlName]="i" required>
+
+                    <mat-error *ngIf="questions.invalid && questions.touched">
+                        <mat-error *ngIf="questions.errors?.required" class="text-danger">Question cannot be empty</mat-error>
+                    </mat-error>
+
+                </mat-form-field> 
+                
+            </div> 
+
+        </div>
+
+        <div class="submit-row">
+            <button mat-flat-button [disabled]="!registrationForm.valid" type="submit" color="warn">Update</button>
+        </div>
+
+</form>
+
+{{ registrationForm.value | json }}

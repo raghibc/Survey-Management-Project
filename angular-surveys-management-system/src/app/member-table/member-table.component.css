@@ -1,0 +1,31 @@
+.search-field {
+    margin-left: 10%;
+}
+
+table { 
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+th.mat-header-cell {
+    width: 13%;
+    margin-right: 1%;
+    background-color: maroon;
+    color: white;
+}
+
+#edit_btn:hover {
+    background-color: rgb(110, 196, 149); 
+}
+
+#edit_btn {
+    margin-right: 2%;
+}
+
+#del_btn:hover {
+    background-color: rgb(252, 75, 65);
+}

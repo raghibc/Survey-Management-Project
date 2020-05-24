@@ -10,3 +10,21 @@ table {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+th.mat-header-cell {
+    width: 20%;
+    background-color: maroon;
+    color: white;
+}
+ 
+#edit_btn:hover {
+    background-color: rgb(110, 196, 149); 
+}
+
+#edit_btn {
+    margin-right: 2%;
+}
+
+#del_btn:hover {
+    background-color: rgb(252, 75, 65);
+}

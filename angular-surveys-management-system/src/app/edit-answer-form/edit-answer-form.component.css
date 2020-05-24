@@ -1,0 +1,79 @@
+.instructions, .confirm-msg {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.first-row {
+    margin: auto;
+    width: 50%;
+}
+
+.name {
+    display: inline-block;
+}
+
+.name {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.name-full-width {
+    width: 100%;
+}
+
+.title {
+    display: inline-block;
+}
+  
+.title {
+    width: 47.5%;
+}
+
+.title-full-width {
+    width: 100%;
+}
+
+.custom-section {
+    width: 60%;
+    margin-bottom: 3%;
+}
+
+.custom-q-full-width {
+    width: 100%;
+}
+
+.custom-a-full-width {
+    width: 100%;
+}
+
+.btn-row button {
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: rgb(219, 81, 81);
+    border-color: whitesmoke;
+}
+
+.btn-primary:hover {
+    background-color: maroon;
+}
+
+.btn-row {
+    margin-bottom: 1%;
+}
+
+.first-row {
+    margin-bottom: 1%;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+.custom-section {
+    margin: 1.5% auto 1.5% auto;
+}

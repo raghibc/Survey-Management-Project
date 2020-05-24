@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,29 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-surveys-management-system';
+export class AppComponent implements OnInit {
 
   constructor(private router: Router){}
 
-  showTable(){
-    this.router.navigate(['/survey-table']);
+  ngOnInit(){
   }
-
-  makeNewSurvey(){
-    this.router.navigate(['/new-survey']);
-  }
-
-  editSurvey(){
-    this.router.navigate(['/edit-survey']);
-  }
-
-  deleteSurvey(){
-    this.router.navigate(['/delete-survey']);
-  }
-
-  findSurvey(){
-    this.router.navigate(['/find-survey']);
-  }
-
+  
 }

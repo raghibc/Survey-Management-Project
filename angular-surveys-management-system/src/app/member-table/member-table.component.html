@@ -1,0 +1,70 @@
+<app-members-buttons></app-members-buttons>
+
+<mat-form-field class="search-field">
+    <input (keyup)="filter($event.target.value)" matInput placeholder="Search">
+</mat-form-field>
+  
+    <div class="mat-elevation-z8">
+      
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+        <td mat-cell *matCellDef="let member"> {{member.firstName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+        <td mat-cell *matCellDef="let member"> {{member.lastName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
+        <td mat-cell *matCellDef="let member"> {{member.dob | date: 'MM/dd/yyyy'}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
+        <td mat-cell *matCellDef="let member"> {{member.position}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let member"> {{member.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+        <td mat-cell *matCellDef="let member"> {{member.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit_del">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disabled>Edit/Delete</th>
+        <td mat-cell *matCellDef="let member">  
+          <button mat-icon-button type="button" (click)="editMember(member.id)" id="edit_btn">
+            <span class="material-icons">
+              edit
+            </span>
+          </button> 
+          <button mat-icon-button type="button" (click)="deleteDialog(member.id)" id="del_btn">
+            <span class="material-icons">
+              delete
+            </span>
+          </button>  
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  
+
+
+    <mat-paginator [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25]"
+                    showFirstLastButtons>
+    </mat-paginator>
+  
+  </div>
+ 

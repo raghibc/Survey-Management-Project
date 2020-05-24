@@ -9,6 +9,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const MaterialComponents = [
@@ -21,6 +24,9 @@ const MaterialComponents = [
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({

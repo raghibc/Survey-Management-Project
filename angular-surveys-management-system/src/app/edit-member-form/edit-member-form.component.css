@@ -1,0 +1,92 @@
+.instructions, .confirm-msg {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.first-row, .second-row, .third-row {
+    margin: auto;
+    width: 50%;
+}
+
+.first-name, .last-name, .dob, .email, .pos, .phone {
+    display: inline-block;
+}
+
+.first-name {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.first-name-full-width {
+    width: 100%;
+}
+
+.last-name {
+    width: 47.5%;
+}
+
+.last-name-full-width {
+    width: 100%;
+}
+
+.dob {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.dob-full-width {
+    width: 100%;
+}
+
+.pos {
+    width: 47.5%;
+}
+
+.pos-full-width {
+    width: 100%;
+}
+  
+.email {
+    width: 47.5%;
+    margin-right: 5%;
+}
+
+.email-full-width {
+    width: 100%;
+}
+
+.phone {
+    width: 47.5%;
+}
+
+.phone-full-width {
+    width: 100%;
+}
+
+.btn-row button {
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: rgb(219, 81, 81);
+    border-color: whitesmoke;
+}
+
+.btn-primary:hover {
+    background-color: maroon;
+}
+
+.btn-row {
+    margin-bottom: 1%;
+}
+
+.first-row, .second-row, .third-row {
+    margin-bottom: 1%;
+} 
+
+button {
+    margin: 0 auto;
+    display: block;
+}

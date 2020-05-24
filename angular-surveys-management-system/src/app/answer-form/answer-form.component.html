@@ -1,0 +1,73 @@
+<app-answers-buttons></app-answers-buttons>
+
+<form [formGroup]="registrationForm" *ngIf="!submittedSurvey; else elseBlock" (ngSubmit)="surveySubmit()">
+    <p class="instructions">Pick a survey and answer the corresponding questions</p>
+        
+        <div class="first-row">
+                
+            <div class="name">
+
+                <mat-form-field class="name-full-width" appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <mat-select formControlName="name" required>
+                        <mat-option *ngFor="let n of names" [value]="n">
+                            {{n}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="name.hasError('required')">Name is required</mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <div class="title">
+
+                <mat-form-field class="title-full-width" appearance="outline">
+                    <mat-label>Survey</mat-label>
+                    <mat-select formControlName="title" required>
+                        <mat-option (click)="displayQs()" *ngFor="let t of titles" [value]="t">
+                            {{t}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="title.hasError('required')">Title is required</mat-error>
+                </mat-form-field>
+
+            </div>
+
+        </div>
+
+        <div class="custom-section" *ngFor="let q of questions; let i = index;">
+
+            <mat-form-field class="custom-q-full-width" appearance="outline">
+                <mat-label>Question</mat-label>
+                <input matInput value="{{q}}" readonly="readonly">
+            </mat-form-field>
+
+            
+            <div formArrayName="answers">
+                    
+                <mat-form-field class="custom-a-full-width" appearance="outline">
+                    <mat-label>Answer</mat-label>
+                    <input matInput [class.is-invalid]="answers.invalid && answers.touched" [formControlName]="i" required>
+
+                    <mat-error *ngIf="answers.invalid && answers.touched">
+                        <mat-error class="text-danger">Answer cannot be empty</mat-error>
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+
+        </div> 
+
+        <div class="btn-row">
+            <button mat-flat-button [disabled]="!registrationForm.valid" type="submit" color="warn">Submit</button>
+        </div>
+
+</form>
+
+<ng-template #elseBlock>
+    <p class="confirm-msg">Thank you. The answers to the survey have been saved.</p> 
+</ng-template>
+
+
+{{ registrationForm.value | json }}

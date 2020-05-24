@@ -1,0 +1,127 @@
+<app-members-buttons></app-members-buttons>
+
+<form [formGroup]="registrationForm" *ngIf="!submittedSurvey; else elseBlock" (ngSubmit)="surveySubmit()">
+
+    <p class="instructions">Fill out the following member fields</p>
+        
+        <div class="first-row">
+                
+            <div class="first-name">
+                <mat-form-field class="first-name-full-width" appearance="outline">
+                    <mat-label>First name</mat-label>
+                    <input matInput [class.is-invalid]="firstName.invalid && 
+                    firstName.touched" formControlName="firstName" required>
+
+                    <mat-error *ngIf="firstName.invalid && firstName.touched">
+                        <mat-error *ngIf="firstName.errors?.required" class="text-danger">First name is required</mat-error>
+                        <mat-error *ngIf="firstName.errors?.pattern && !firstName.errors?.minlength" class="text-danger">First name cannot have digits or special characters</mat-error>
+                        <mat-error *ngIf="firstName.errors?.minlength" class="text-danger">First name must have at least two letters</mat-error>
+                    </mat-error>
+
+                 </mat-form-field>
+
+            </div>
+
+            <div class="last-name">
+                <mat-form-field class="last-name-full-width" appearance="outline">
+                    <mat-label>Last name</mat-label>
+                    <input matInput [class.is-invalid]="lastName.invalid &&
+                    lastName.touched" formControlName="lastName" required>
+                   
+                    <mat-error *ngIf="lastName.invalid && lastName.touched">
+                        <mat-error *ngIf="lastName.errors?.required" class="text-danger">Last name is required</mat-error>
+                        <mat-error *ngIf="lastName.errors?.pattern && !lastName.errors?.minlength" class="text-danger">Last name cannot have digits or special characters</mat-error>
+                        <mat-error *ngIf="lastName.errors?.minlength" class="text-danger">Last name must have at least two letters</mat-error>
+                    </mat-error>
+                   
+                </mat-form-field>
+                    
+            </div>
+
+        </div>
+
+        <div class="second-row">
+
+            <div class="dob">
+                <mat-form-field class="dob-full-width" appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [max]="maxDate" [matDatepicker]="picker" [class.is-invalid]="dob.invalid && 
+                    dob.touched" formControlName="dob" required>
+                    <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+
+                    <mat-error *ngIf="dob.invalid && dob.touched">
+                        <mat-error *ngIf="dob.errors?.required" class="text-danger">Birth date is required</mat-error>
+                    </mat-error>
+
+                </mat-form-field>
+
+            </div>
+
+            
+            <div class="pos">
+                <mat-form-field class="pos-full-width" appearance="outline">
+                    <mat-label>Relation to college</mat-label>
+                    <mat-select formControlName="position" required>
+                        <mat-option *ngFor="let pos of positions" [value]="pos">
+                            {{pos}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="position.hasError('required')">Position is required</mat-error>
+
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="third-row">
+
+            <div class="email">
+                <mat-form-field class="email-full-width" appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input class="email-input-field" matInput [class.is-invalid]="email.invalid && 
+                    email.touched" formControlName="email" required>
+
+                    <mat-icon matSuffix class="mat-icon notranslate material-icons">email</mat-icon>
+                    
+                    <mat-error *ngIf="email.invalid && email.touched">
+                        <mat-error *ngIf="email.errors?.required" class="text-danger">Email is required</mat-error>
+                        <mat-error *ngIf="email.errors?.pattern" class="text-danger">Not a valid email</mat-error>
+                    </mat-error>
+
+                </mat-form-field>
+
+            </div>
+
+            <div class="phone">
+                <mat-form-field class="phone-full-width" appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input class="phone-input-field" matInput [class.is-invalid]="phone.invalid && 
+                    phone.touched" formControlName="phone" required>
+
+                    <mat-icon matSuffix class="mat-icon notranslate material-icons">phone</mat-icon>
+
+                    <mat-error *ngIf="phone.invalid && phone.touched">
+                        <mat-error *ngIf="phone.errors?.required" class="text-danger">Phone number is required</mat-error>
+                        <mat-error *ngIf="phone.errors?.pattern" class="text-danger">Not a valid phone number</mat-error>
+                    </mat-error>
+
+                </mat-form-field>
+
+            </div>
+            
+
+        </div>
+
+        <div class="btn-row">
+            <button mat-flat-button [disabled]="!registrationForm.valid" type="submit" color="warn">Submit</button>
+        </div>
+
+</form>
+
+<ng-template #elseBlock>
+    <p class="confirm-msg">Thank you. The member has been added to the system.</p> 
+</ng-template>
+ 
+
+{{ registrationForm.value | json }}
