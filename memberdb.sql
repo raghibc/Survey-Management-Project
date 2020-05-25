@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2020 at 11:15 PM
+-- Generation Time: May 25, 2020 at 07:11 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -56,14 +56,14 @@ CREATE TABLE `answers` (
 
 INSERT INTO `answers` (`id`, `name`, `title`, `answer_1`, `answer_2`, `answer_3`, `answer_4`, `answer_5`, `answer_6`, `answer_7`, `answer_8`, `answer_9`, `answer_10`, `answer_11`, `answer_12`, `answer_13`, `answer_14`, `answer_15`, `answer_16`) VALUES
 (4, 'Cristiano Ronaldo', 'Soccer Survey', 'Portugal', 'Goalkeeper', '6', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(21, 'Scottie Pippen', 'drgdrg', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (24, 'Luka Doncic', 'Joes NBA Survey', 'a', 'b', 'c', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(25, 'Hakeem Olajuwon', 'drgdrg', 'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c', '', '', '', '', '', '', ''),
 (26, 'Carmelo Anthony', 'Joes NBA Survey', '10 inches', 'right', '500', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (27, 'Kylian Mbappe', 'Joes NBA Survey', '45 inches', 'ambidextrous', '999', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (28, 'Zion Williamson', '16 part survey', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001', '0001'),
 (29, 'Larry Bird', 'dfvfdv', 'srfssf', 'srwgr', 'trhtr', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(31, 'Luka Doncic', 'nonuiuh', 'tes', 'rhs', 'ok', 'ok', '', '', '', '', '', '', '', '', '', '', '', '');
+(31, 'Luka Doncic', 'nonuiuh', 'tes', 'rhs', 'srbdbd', 'koijijo', '', '', '', '', '', '', '', '', '', '', '', ''),
+(33, 'Scottie Pippen', 'drgdrg', 'egsr', 'thdccd', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(34, 'Hakeem Olajuwon', 'drgdrg', 'jhjjhjh', 'nhdfhn', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ ALTER TABLE `surveys`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `members`
